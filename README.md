@@ -60,7 +60,7 @@ Ubuntu 20.04 | ROS Noetic
 ## Setup
 
 ```bash
-mkdir robotic_arm
+mkdir robotic_arm && cd robotic_arm
 git clone https://github.com/ArchBsc/widowxl_pick_and_place.git
 chmod +x ~/robotic_arm/src/widowxl_moveit_config_oj/scripts/*.py
 ```
