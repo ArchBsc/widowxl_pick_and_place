@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: interbotix_xsarm_descriptions
+    relative_path: urdf/widowxl.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/widowxl.srdf
+  CONFIG:
+    author_name: giannimelene
+    author_email: giannimelene@gmail.com
+    generated_timestamp: 1741266883

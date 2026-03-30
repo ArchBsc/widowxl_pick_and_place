@@ -1,0 +1,15 @@
+# ROS files
+build/
+devel/
+.catkin_workspace
+
+# Python
+__pycache__/
+*.pyc
+
+# Archives & Personal Docs
+*.zip
+*.doc
+*.docx
+output.txt
+project_tree.txt
