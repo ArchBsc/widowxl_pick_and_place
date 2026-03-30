@@ -70,7 +70,7 @@ chmod +x ~/robotic_arm/src/widowxl_moveit_config_oj/scripts/*.py
 ## Εκτέλεση
 
 ```bash
-cd ~/robotic_arm_f && catkin_make
+cd ~/robotic_arm && catkin_make
 source devel/setup.bash
 ```
 
