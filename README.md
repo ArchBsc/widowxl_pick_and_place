@@ -59,35 +59,8 @@ Ubuntu 20.04 | ROS Noetic
 
 ## Setup
 
-Αντέγραψε τα αρχεία στο package:
-
 ```bash
-cp ObjectPose.msg ~/robotic_arm_f/src/widowxl_moveit_config_oj/msg/
-cp pick_and_place_node.py ~/robotic_arm_f/src/widowxl_moveit_config_oj/scripts/
-cp object_pose_publisher.py ~/robotic_arm_f/src/widowxl_moveit_config_oj/scripts/
 chmod +x ~/robotic_arm_f/src/widowxl_moveit_config_oj/scripts/*.py
-```
-
-Στο `package.xml` πρόσθεσε:
-
-```xml
-<build_depend>message_generation</build_depend>
-<run_depend>message_runtime</run_depend>
-```
-
-Στο `CMakeLists.txt` πρόσθεσε `message_generation` στο `find_package` και το παρακάτω block πριν το `catkin_package()`:
-
-```cmake
-add_message_files(FILES ObjectPose.msg)
-generate_messages(DEPENDENCIES std_msgs)
-```
-
-Και `message_runtime` στο `catkin_package()`:
-
-```cmake
-catkin_package(
-  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
-)
 ```
 
 ---
