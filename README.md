@@ -59,35 +59,10 @@ Ubuntu 20.04 | ROS Noetic
 
 ## Setup
 
-Αντέγραψε τα αρχεία στο package:
-
 ```bash
-cp ObjectPose.msg ~/robotic_arm_f/src/widowxl_moveit_config_oj/msg/
-cp pick_and_place_node.py ~/robotic_arm_f/src/widowxl_moveit_config_oj/scripts/
-cp object_pose_publisher.py ~/robotic_arm_f/src/widowxl_moveit_config_oj/scripts/
-chmod +x ~/robotic_arm_f/src/widowxl_moveit_config_oj/scripts/*.py
-```
-
-Στο `package.xml` πρόσθεσε:
-
-```xml
-<build_depend>message_generation</build_depend>
-<run_depend>message_runtime</run_depend>
-```
-
-Στο `CMakeLists.txt` πρόσθεσε `message_generation` στο `find_package` και το παρακάτω block πριν το `catkin_package()`:
-
-```cmake
-add_message_files(FILES ObjectPose.msg)
-generate_messages(DEPENDENCIES std_msgs)
-```
-
-Και `message_runtime` στο `catkin_package()`:
-
-```cmake
-catkin_package(
-  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
-)
+mkdir -p robotic_arm/src && cd robotic_arm/src
+git clone https://github.com/ArchBsc/widowxl_pick_and_place.git
+chmod +x ~/robotic_arm/src/widowxl_pick_and_place/widowxl_moveit_config_oj/scripts/*.py
 ```
 
 ---
@@ -95,7 +70,7 @@ catkin_package(
 ## Εκτέλεση
 
 ```bash
-cd ~/robotic_arm_f && catkin_make
+cd ~/robotic_arm && catkin_make
 source devel/setup.bash
 ```
 
